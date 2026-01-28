@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔐 Acces în Inima Mea | Login de Dragoste 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== VARIABLES ===== */
+        :root {
+            --heart-red: #C41E3A;
+            --heart-pink: #E75480;
+            --love-pink: #DB7093;
+            --soft-pink: #FFB6C1;
+            --bg-dark: #1A0A14;
+            --bg-medium: #2D1525;
+            --bg-light: #3D1F35;
+            --bg-accent: #4A2545;
+            --white: #FFFFFF;
+            --paper: #3D2535;
+            --dark: #F5E6E8;
+            --font-main: 'Poppins', sans-serif;
+            --font-handwritten: 'Caveat', cursive;
+            --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-light) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Hearts Background */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            animation: floatHearts 8s ease-in-out infinite;
+        }
+
+        .heart-float:nth-child(1) { left: 5%; top: 10%; animation-delay: 0s; font-size: 1.2rem; }
+        .heart-float:nth-child(2) { left: 15%; top: 60%; animation-delay: 1s; font-size: 1.8rem; }
+        .heart-float:nth-child(3) { left: 85%; top: 20%; animation-delay: 2s; font-size: 1.4rem; }
+        .heart-float:nth-child(4) { left: 90%; top: 70%; animation-delay: 3s; font-size: 2rem; }
+        .heart-float:nth-child(5) { left: 50%; top: 5%; animation-delay: 4s; font-size: 1.6rem; }
+        .heart-float:nth-child(6) { left: 70%; top: 85%; animation-delay: 5s; font-size: 1.3rem; }
+        .heart-float:nth-child(7) { left: 25%; top: 80%; animation-delay: 6s; font-size: 1.7rem; }
+        .heart-float:nth-child(8) { left: 40%; top: 30%; animation-delay: 7s; font-size: 1.5rem; }
+
+        @keyframes floatHearts {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+            50% { transform: translateY(-30px) rotate(15deg); opacity: 0.5; }
+        }
+
+        /* Login Container */
+        .login-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: linear-gradient(145deg, rgba(61, 37, 53, 0.95), rgba(45, 21, 37, 0.98));
+            border-radius: 25px;
+            padding: 40px 35px;
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(231, 84, 128, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--heart-red), var(--heart-pink), var(--love-pink), var(--heart-pink), var(--heart-red));
+            background-size: 200% 100%;
+            animation: gradientMove 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Header */
+        .login-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .login-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            display: block;
+            animation: heartPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .login-title {
+            font-family: var(--font-handwritten);
+            font-size: 2.5rem;
+            color: var(--soft-pink);
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(231, 84, 128, 0.3);
+        }
+
+        .login-subtitle {
+            color: var(--dark);
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* Form */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            color: var(--soft-pink);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .input-group label .label-icon {
+            font-size: 1.1rem;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            padding: 15px 20px;
+            padding-left: 50px;
+            background: rgba(26, 10, 20, 0.6);
+            border: 2px solid rgba(231, 84, 128, 0.3);
+            border-radius: 15px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: var(--font-main);
+            transition: all var(--transition);
+            outline: none;
+        }
+
+        .input-wrapper input::placeholder {
+            color: rgba(245, 230, 232, 0.4);
+        }
+
+        .input-wrapper input:focus {
+            border-color: var(--heart-pink);
+            box-shadow: 0 0 20px rgba(231, 84, 128, 0.3);
+            background: rgba(26, 10, 20, 0.8);
+        }
+
+        .input-wrapper .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            opacity: 0.7;
+            transition: all var(--transition);
+        }
+
+        .input-wrapper input:focus + .input-icon,
+        .input-wrapper input:not(:placeholder-shown) + .input-icon {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* Login Button */
+        .login-btn {
+            margin-top: 15px;
+            padding: 16px 30px;
+            background: linear-gradient(135deg, var(--heart-red), var(--heart-pink));
+            border: none;
+            border-radius: 15px;
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: var(--font-main);
+            cursor: pointer;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.4);
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        .login-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .login-btn .btn-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .login-btn:hover .btn-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* Hint Section */
+        .login-hint {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(231, 84, 128, 0.1);
+            border-radius: 12px;
+            border: 1px dashed rgba(231, 84, 128, 0.3);
+            text-align: center;
+        }
+
+        .hint-title {
+            color: var(--heart-pink);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .hint-text {
+            color: var(--dark);
+            font-size: 0.8rem;
+            opacity: 0.7;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Messages */
+        .message {
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            display: none;
+            animation: messageAppear 0.5s ease;
+        }
+
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.error {
+            display: block;
+            background: rgba(255, 71, 87, 0.2);
+            border: 1px solid rgba(255, 71, 87, 0.4);
+            color: #ff6b7a;
+        }
+
+        .message.success {
+            display: block;
+            background: rgba(0, 184, 148, 0.2);
+            border: 1px solid rgba(0, 184, 148, 0.4);
+            color: #00d4aa;
+        }
+
+        /* Footer */
+        .login-footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(231, 84, 128, 0.2);
+        }
+
+        .footer-text {
+            color: var(--dark);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .footer-hearts {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            animation: footerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes footerPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Shake Animation for Wrong Password */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        .shake {
+            animation: shake 0.6s ease;
+        }
+
+        /* Success Animation */
+        .success-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 10, 20, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .success-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .success-content {
+            text-align: center;
+            transform: scale(0.8);
+            transition: transform 0.5s ease 0.2s;
+        }
+
+        .success-overlay.active .success-content {
+            transform: scale(1);
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: successBounce 1s ease infinite;
+        }
+
+        @keyframes successBounce {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            75% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .success-title {
+            font-family: var(--font-handwritten);
+            font-size: 3rem;
+            color: var(--soft-pink);
+            margin-bottom: 15px;
+        }
+
+        .success-text {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .success-btn {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--heart-red), var(--heart-pink));
+            border: none;
+            border-radius: 30px;
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .success-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(196, 30, 58, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 30px 25px;
+            }
+
+            .login-title {
+                font-size: 2rem;
+            }
+
+            .login-icon {
+                font-size: 3rem;
+            }
+        }
+
+        /* Fun Error Messages */
+        .error-messages {
+            display: none;
+        }
+
+        /* ===== PAPUSA BALON PLUTITOR ===== */
+        #papusaBalloonContainer {
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            width: 440px;
+            height: 440px;
+            will-change: transform;
+            animation: papusaBalloonMove 30s linear infinite;
+        }
+        .papusa-balloon-img {
+            width: 440px;
+            height: 440px;
+            cursor: pointer;
+            pointer-events: auto;
+            will-change: transform;
+            animation: papusaBalloonFloat 3s ease-in-out infinite;
+            transition: transform 0.3s ease;
+            background: transparent;
+            object-fit: contain;
+        }
+        .papusa-balloon-img:hover {
+            transform: scale(1.15);
+        }
+        @keyframes papusaBalloonMove {
+            0% { top: 10vh; left: 80vw; }
+            25% { top: 60vh; left: 10vw; }
+            50% { top: 20vh; left: 50vw; }
+            75% { top: 70vh; left: 75vw; }
+            100% { top: 10vh; left: 80vw; }
+        }
+        @keyframes papusaBalloonFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes sunflowerRise {
+            0% { 
+                opacity: 1; 
+                transform: translate(-50%, -50%) scale(0.3) rotate(0deg); 
+            }
+            20% {
+                opacity: 1;
+                transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy) * 0.3)) scale(1.2) rotate(var(--rot));
+            }
+            100% { 
+                opacity: 0; 
+                transform: translate(calc(-50% + var(--dx) * 1.5), calc(-50% - 300px + var(--dy))) scale(0.6) rotate(calc(var(--rot) * 3)); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts">
+        <span class="heart-float">💕</span>
+        <span class="heart-float">❤️</span>
+        <span class="heart-float">💖</span>
+        <span class="heart-float">💝</span>
+        <span class="heart-float">💗</span>
+        <span class="heart-float">🩷</span>
+        <span class="heart-float">💓</span>
+        <span class="heart-float">💞</span>
+    </div>
+
+        <!-- Balon plutitor Papusa -->
+        <div id="papusaBalloonContainer">
+            <img src="Assets/Images/papusa-png.png" alt="Papusa Balon" id="papusaBalloon" class="papusa-balloon-img">
+        </div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <span class="login-icon">🔐💕</span>
+                <h1 class="login-title">Acces în Inima Mea</h1>
+                <p class="login-subtitle">Doar persoanele speciale pot intra aici... 💖</p>
+            </div>
+
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <label>
+                        <span class="label-icon">�‍⚕️</span>
+                        Nume de Doftor
+                    </label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="username" 
+                            value="pukisor"
+                            autocomplete="off"
+                            required
+                        >
+                        <span class="input-icon">🩺</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        <span class="label-icon">🔑</span>
+                        Parola Super Secretă
+                    </label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="password" 
+                            value="pufos"
+                            autocomplete="off"
+                            required
+                        >
+                        <span class="input-icon">🐱</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span class="btn-icon">💝</span>
+                    <span>Intră în Lumea Noastră</span>
+                </button>
+
+                <div class="message" id="message"></div>
+            </form>
+
+            <div class="login-hint">
+                <div class="hint-title">
+                    <span>🤫</span> Securitate Maximă
+                </div>
+                <p class="hint-text">
+                    Acest site e protejat de hackeri, virusi,<br>
+                    și de oricine nu e Puki! 🛡️🐱<br>
+                    <span style="font-size: 0.7rem;">(parola e deja scrisă, nu te panica 😂)</span>
+                </p>
+            </div>
+
+            <div class="login-footer">
+                <p class="footer-text">Făcut cu infinit de multă dragoste 💕</p>
+                <div class="footer-hearts">💖 💗 💝 💕 💖</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Overlay -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-content">
+            <div class="success-icon">🎉💕🎉</div>
+            <h2 class="success-title">Bine ai venit, Pukinosa mea!</h2>
+            <p class="success-text">Ai deblocat accesul în inima mea pentru totdeauna! 💖</p>
+            <a href="index.html" class="success-btn">
+                <span>🚀</span>
+                <span>Continuă Aventura</span>
+                <span>💕</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Error Messages Array (hidden, for JS) -->
+    <div class="error-messages" id="errorMessages">
+        <span data-error="wrong">Hopa! 😅 Cred că ai uitat cum mă alinti...</span>
+        <span data-error="almost">Aproape, aproape! 🤔 Mai încearcă o dată, puiule!</span>
+        <span data-error="nope">Nu-i asta! 😝 Gândește-te la alinturile noastre!</span>
+        <span data-error="try">Mai încearcă! 💪 Știu că poți!</span>
+        <span data-error="cold">Rece, rece... 🥶 Încearcă altceva!</span>
+    </div>
+
+    <script>
+        // ===== BALON PLUTITOR PAPUSA =====
+        (function() {
+            const container = document.getElementById('papusaBalloonContainer');
+            const img = document.getElementById('papusaBalloon');
+            if (!container || !img) return;
+            
+            // La click, explozie de flori care plutesc în sus - SUPER FANCY
+            img.onclick = function(e) {
+                e.stopPropagation();
+                
+                // Obține poziția containerului pentru a plasa florile
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                // Creează 45 de flori care explodează și plutesc în sus
+                for (let i = 0; i < 45; i++) {
+                    const emoji = document.createElement('span');
+                    emoji.textContent = '🌻';
+                    
+                    // Direcție random dar mai mult în sus
+                    const dx = (Math.random() - 0.5) * 250;
+                    const dy = Math.random() * -100;
+                    const rot = (Math.random() - 0.5) * 180;
+                    const size = 18 + Math.random() * 22;
+                    const duration = 1.5 + Math.random() * 1;
+                    const delay = Math.random() * 0.3;
+                    
+                    emoji.style.cssText = `
+                        position: fixed;
+                        font-size: ${size}px;
+                        left: ${centerX}px;
+                        top: ${centerY}px;
+                        pointer-events: none;
+                        z-index: 10000;
+                        --dx: ${dx}px;
+                        --dy: ${dy}px;
+                        --rot: ${rot}deg;
+                        animation: sunflowerRise ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+                        animation-delay: ${delay}s;
+                    `;
+                    document.body.appendChild(emoji);
+                    setTimeout(() => emoji.remove(), (duration + delay) * 1000 + 200);
+                }
+                
+                // Efect de dispariție pe imagine
+                img.style.opacity = '0';
+                img.style.transform = 'scale(0.2) rotate(45deg)';
+                
+                // Ascunde containerul
+                setTimeout(() => {
+                    container.style.display = 'none';
+                    img.style.opacity = '1';
+                    img.style.transform = '';
+                }, 500);
+                
+                // Reapare după 30 secunde
+                setTimeout(() => {
+                    container.style.display = 'block';
+                }, 30000);
+            };
+        })();
+
+        // Error messages array for fun responses
+        const errorMessages = [
+            "Hopa! 😅 Cred că ai uitat cum te alint...",
+            "Aproape, aproape! 🤔 Mai încearcă o dată, puiule!",
+            "Nu-i asta! 😝 Gândește-te la alinturile noastre!",
+            "Mai încearcă! 💪 Știu că poți!",
+            "Rece, rece... 🥶 Ai nevoie de un indiciu?",
+            "Hmmm... 🧐 Nu pare a fi parola corectă!",
+            "Ups! 🙈 Să nu-mi spui că m-ai uitat!",
+            "Nope! 🙅‍♀️ Asta nu e parola dragostei!",
+            "Încearcă din nou! 💕 Sunt sigur că îți amintești!",
+            "Greșit! 😋 Dar te iubesc oricum!"
+        ];
+
+        let errorIndex = 0;
+
+        // Login Form Handler
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.toLowerCase().trim();
+            const password = document.getElementById('password').value.toLowerCase().trim();
+            const messageDiv = document.getElementById('message');
+            const loginCard = document.querySelector('.login-card');
+            
+            // Correct credentials
+            const correctUsername = 'pukisor';
+            const correctPassword = 'pufos';
+            
+            if (username === correctUsername && password === correctPassword) {
+                // Success!
+                sessionStorage.setItem('loggedIn', 'true');
+                messageDiv.className = 'message success';
+                messageDiv.textContent = '💖 Accesul a fost acordat! Te iubesc! 💖';
+                
+                // Show success overlay after a short delay
+                setTimeout(() => {
+                    document.getElementById('successOverlay').classList.add('active');
+                    
+                    // Create confetti effect
+                    createConfetti();
+                }, 800);
+                
+            } else {
+                // Wrong credentials
+                messageDiv.className = 'message error';
+                messageDiv.textContent = errorMessages[errorIndex];
+                
+                // Cycle through error messages
+                errorIndex = (errorIndex + 1) % errorMessages.length;
+                
+                // Shake animation
+                loginCard.classList.add('shake');
+                setTimeout(() => {
+                    loginCard.classList.remove('shake');
+                }, 600);
+                
+                // Create a sad heart
+                createSadHeart();
+            }
+        });
+
+        // Create Confetti Effect
+        function createConfetti() {
+            const colors = ['#C41E3A', '#E75480', '#DB7093', '#FFB6C1', '#FF69B4'];
+            const emojis = ['💕', '❤️', '💖', '💝', '✨', '🎉', '💗', '🩷'];
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.innerHTML = Math.random() > 0.5 ? emojis[Math.floor(Math.random() * emojis.length)] : '';
+                    confetti.style.cssText = `
+                        position: fixed;
+                        top: -20px;
+                        left: ${Math.random() * 100}%;
+                        font-size: ${Math.random() * 20 + 15}px;
+                        pointer-events: none;
+                        z-index: 200;
+                        animation: confettiFall ${Math.random() * 2 + 2}s linear forwards;
+                    `;
+                    
+                    if (!confetti.innerHTML) {
+                        confetti.style.width = '10px';
+                        confetti.style.height = '10px';
+                        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.borderRadius = '50%';
+                    }
+                    
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 4000);
+                }, i * 50);
+            }
+        }
+
+        // Create Sad Heart on Error
+        function createSadHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💔';
+            heart.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 4rem;
+                pointer-events: none;
+                z-index: 50;
+                animation: sadHeart 1s ease forwards;
+            `;
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        }
+
+        // Add keyframes dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes confettiFall {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes sadHeart {
+                0% {
+                    transform: translate(-50%, -50%) scale(0);
+                    opacity: 1;
+                }
+                50% {
+                    transform: translate(-50%, -50%) scale(1.5);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(-50%, -100%) scale(0.5);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Easter Egg: Triple click on title shows password hint
+        let clickCount = 0;
+        let clickTimer;
+        document.querySelector('.login-title').addEventListener('click', function() {
+            clickCount++;
+            clearTimeout(clickTimer);
+            
+            clickTimer = setTimeout(() => {
+                if (clickCount >= 3) {
+                    alert('🤫 Psst! Numele începe cu "puki" și termină cu "nosa"...\nParola e ceva prețios în italiană! 💎');
+                }
+                clickCount = 0;
+            }, 500);
+        });
+
+        // Input animations
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

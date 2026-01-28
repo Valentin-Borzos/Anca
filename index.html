@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💉 Dr. Anca - Diagnostic: Te Iubesc! 💕</title>
+    <script>
+        // Redirect to login if not logged in
+        if (!sessionStorage.getItem('loggedIn')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@400;500;600;700&family=Special+Elite&family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Music - pornește la deschiderea plicului -->
+    <audio id="bgMusic" src="Assets/Songs/music.mp3" loop></audio>
+
+        <!-- Floating Hearts Background (Global) -->
+    <div id="floatingHearts"></div>
+
+    <!-- Intro Page with Envelope -->
+    <div id="introPage" class="intro-page">
+        <div class="intro-bg">
+            <div class="stars-container" id="starsContainer"></div>
+            <div class="floating-hearts">
+                <span class="heart-float">💕</span>
+                <span class="heart-float">❤️</span>
+                <span class="heart-float">💖</span>
+                <span class="heart-float">💝</span>
+                <span class="heart-float">💗</span>
+                <span class="heart-float">🩷</span>
+                <span class="heart-float">💓</span>
+                <span class="heart-float">💞</span>
+            </div>
+        </div>
+        
+        <div class="envelope-container">
+            <div class="envelope" id="envelope">
+                <div class="envelope-back"></div>
+                <div class="envelope-front">
+                    <div class="envelope-address">
+                        <p class="to-line">Pentru:</p>
+                        <p class="name-line">Dr. Puki 🩺</p>
+                        <p class="address-line">Doftorita care mi-a</p>
+                        <p class="address-line">bagat inima in boala</p>
+                        
+                    </div>
+                </div>
+                <div class="envelope-flap" id="envelopeFlap"></div>
+                
+                <div class="love-letter" id="loveLetter">
+                    <div class="letter-paper">
+                        <div class="letter-header">
+                            <h2>Bebe meu pufos,</h2>
+                        </div>
+                        <div class="letter-content">
+                            <p>Acum un an si-un pic ai luat fericirea, ai facut-o mare cat universul si ai trimis-o-n viata mea.<br>Cand voi putea eu vreodata sa intorc sentimentele pe care mi le oferi zi de zi de atunci? 💘</p>
+                            <div class="letter-signature">
+                                <p>Cu toată dragostea din univers,</p>
+                                <p class="signature">Puki tau aproape inalt 💘</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="enter-site-btn" id="enterSiteBtn">
+                        <span class="btn-icon">💊</span>
+                        <span class="btn-text">Intra In Lumea Noastră</span>
+                        <span class="btn-sparkle">✨</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="click-instruction" id="clickInstruction">
+                
+                <div class="pulse-indicator"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preloader Medical -->
+    <div id="preloader" class="hidden">
+        <div class="preloader-content">
+            <div class="heart-loader">
+                <span class="heart-beat">❤️</span>
+            </div>
+            <p class="loading-text">Se încarcă povestea noastră... 💕</p>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="hidden">
+        <!-- Hero Section - Urgența -->
+        <section id="urgenta" class="hero-section">
+            <div class="parallax-bg" data-speed="0.3">
+                <div class="hero-gradient"></div>
+            </div>
+            <div class="hero-bg">
+                <div class="pulse-circles">
+                    <div class="pulse-circle"></div>
+                    <div class="pulse-circle"></div>
+                    <div class="pulse-circle"></div>
+                </div>
+                <div class="floating-pills">
+                    <span class="pill-float">💊</span>
+                    <span class="pill-float">💉</span>
+                    <span class="pill-float">🩺</span>
+                    <span class="pill-float">🩹</span>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="emergency-badge animated-badge">
+                    <span class="badge-icon">🚨</span>
+                    <span class="badge-text">URGENȚĂ CARDIACĂ</span>
+                    <span class="badge-pulse"></span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-line glitch" data-text="Cod Roșu:">Cod Roșu:</span>
+                    <span class="title-main typewriter">Mort dupa tine!</span>
+                </h1>
+                
+                <div class="hero-photo">
+                    <div class="photo-frame stethoscope-frame floating-animation">
+                        <div class="photo-glow"></div>
+                        <img src="Assets/Images/anca-1.jpg" alt="Anca" class="photo-inside">
+                        <div class="stethoscope-decoration">🩺</div>
+                        <div class="photo-hearts">
+                            <span>🌻</span><span>☀️</span><span>🌻</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="diagnosis-box glassmorphism">
+                    <p class="diagnosis-label">DIAGNOSTIC PRIMAR:</p>
+                    <p class="diagnosis-text typed-diagnosis"></p>
+                    <span class="typing-cursor">|</span>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="549">549</span>
+                        <span class="stat-label">Zile împreună</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Iubire</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="549536">549536</span>
+                        <span class="stat-label">Gânduri la tine</span>
+                    </div>
+                </div>
+                
+                
+                    <span>~imi faci viata un basm~</span>
+                    <div class="heartbeat-icon">🌻</div>
+                </a>
+
+                <!-- Bula Animată -->
+                <div class="bubble-container" id="bubbleContainer">
+                    <div class="floating-bubble" id="floatingBubble">
+                        <div class="bubble-shine"></div>
+                    </div>
+                    <p class="bubble-text">nu mă sparge</p>
+                </div>
+                <div class="bubble-popped-text hidden" id="bubblePoppedText">
+                    m-a spart un pukinos mucios 😜
+                </div>
+            </div>
+        </section>
+
+        <!-- Bula cu imagine PNG - TOTAL INDEPENDENTĂ (în afara secțiunii pentru position:fixed) -->
+        <div id="bebeBubbleContainer" style="display:none;">
+            <img src="Assets/Images/bebe-2.png" id="bebeBubble" alt="Bebe Bubble" class="bebe-bubble-img">
+        </div>
+
+        <!-- CAPITOLUL 1: Povestea Noastră - Timeline Epic -->
+        <section id="povestea" class="story-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul I</span>
+                    <h2 class="section-title epic-title">
+                        <span class="title-icon">📖</span>
+                        Povestea Noastră
+                        <span class="title-decoration">━━━ 🌻 ━━━</span>
+                    </h2>
+                    <p class="chapter-subtitle">Fiecare moment cu tine, o pagină din cel mai frumos basm</p>
+                </div>
+                
+                <div class="epic-timeline" id="epicTimeline" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; width: 100%; max-width: 900px;">
+                    <!-- August 2024 - Începutul -->
+                    <div class="timeline-chapter" data-chapter="1">
+                        <div class="chapter-marker">
+                        </div>
+                        <div class="chapter-content glassmorphism">
+                            <div class="chapter-badge">ZIUA ZERO</div>
+                            <h3>I kinda like you... <span style="font-size:1.1em;">🤭</span></h3>
+                            <div class="chapter-gallery">
+                                <div class="gallery-main">
+                                    <img src="Assets/Images/mana-1.jpg" alt="Prima zi">
+                                    <div class="gallery-overlay">
+                                        <span>Si ai lasat fericirea sa intre in viata mea... 💕</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chapter-text">
+                                <p class="chapter-quote">"In seara de 15 august 2024, universul a decis ca merit sa fiu cea mai fericita persoana din lume..."</p>
+                                <p>Prima noastră zi împreună, și ultima fără stres și nervi. Dar Doamne ce-mi place! <span style="color:#E75480;font-size:1.2em;">💕</span></p>
+                            </div>
+                            <div class="chapter-medical-note">
+                                <span class="note-icon">📋</span>
+                                <p><strong>Diagnostic:</strong> Îndrăgostire la prima vedere</p>
+                                <p><strong>Simptome:</strong> Inimă accelerată, zâmbet permanent, fluturi în stomac</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Septembrie 2024 -->
+                    <div class="timeline-chapter" data-chapter="2">
+                        <div class="chapter-marker">
+                        </div>
+                        <div class="chapter-content glassmorphism">
+                            <div class="chapter-badge">PRIMELE MOMENTE IMPREUNA</div>
+                            <h3>Ador lumea noastră</h3>
+                            <div class="chapter-gallery multi-gallery">
+                                <img src="Assets/Images/capitol unu unu.jpg" alt="Capitol Unu 1">
+                                <img src="Assets/Images/capitol unu doi.jpeg" alt="Capitol Unu 2">
+                                <img src="Assets/Images/capitol unu trei.jpg" alt="Capitol Unu 3">
+                                <img src="Assets/Images/capitol unu patru.JPG" alt="Capitol Unu 4">
+                            </div>
+                            <div class="chapter-text">
+                                <p>Mi-ai dat sansa sa te cunosc, si am inceput sa ador prezenta ta. Nu ma mai saturam de tine! Era din ce in ce mai bine.</p>
+                            </div>
+                            <div class="chapter-medical-note">
+                                <span class="note-icon">💊</span>
+                                <p><strong>Tratamentul dnei doftor:</strong> Doze masive de pupici</p>
+                                <p><strong>Rezultat:</strong> Dependență severă de fericire!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Octombrie-Noiembrie 2024 -->
+                    <div class="timeline-chapter" data-chapter="3">
+                        <div class="chapter-marker">
+                        </div>
+                        <div class="chapter-content glassmorphism">
+                            <div class="chapter-badge">Dorul ne intarea</div>
+                            <h3>Cand distanta a aparut, iubirea a crescut</h3>
+                            <div class="chapter-gallery multi-gallery">
+                                <img src="Assets/Images/capitol doi unu.jpeg" alt="Capitol Doi 1">
+                                <img src="Assets/Images/capitol doi doi.jpg" alt="Capitol Doi 2">
+                                <img src="Assets/Images/capitol doi trei.jpg" alt="Capitol Doi 3">
+                                <img src="Assets/Images/capitol doi patru.jpg" alt="Capitol Doi 4">
+                            </div>
+                            <div class="chapter-text">
+
+                                    <p>Am realizat ca distanta nu inseamna nimic. Am vazut ceva frumos in noi si am invatat sa fim rabdatori.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Iarna 2025-2026 -->
+                    <div class="timeline-chapter" data-chapter="9">
+                        <div class="chapter-marker">
+                        </div>
+                        <div class="chapter-content glassmorphism">
+                            <div class="chapter-badge special">E realitate sau vis?</div>
+                            <h3>Si revederile erau mai dulci ca niciodata</h3>
+                            <div class="chapter-gallery multi-gallery">
+                                <img src="Assets/Images/capitol trei unu.JPG" alt="Capitol Trei 1">
+                                <img src="Assets/Images/capitol trei doi.jpeg" alt="Capitol Trei 2">
+                                <img src="Assets/Images/capitol trei trei.jpeg" alt="Capitol Trei 3">
+                                <img src="Assets/Images/capitol trei patru.jpeg" alt="Capitol Trei 4">
+                            </div>
+                            <div class="chapter-text">
+                                <p>Si fiecare dimineata in care te aveam din nou langa mine, era o binecuvantare.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prezent - Valentine's 2026 -->
+                    <div class="timeline-chapter final-chapter" data-chapter="10">
+                        <div class="chapter-marker">
+                        </div>
+                        <div class="chapter-content glassmorphism special-glow">
+                            <div class="chapter-badge valentines">Doi gogoși suna mai bine oricum</div>
+                            <h3>Esti un puki enervant (de adorabil)</h3>
+                            <div class="chapter-gallery multi-gallery">
+                                  <img src="Assets/Images/capitol patru unu.jpg" alt="Capitol Patru 1">
+                                  <img src="Assets/Images/capitol patru doi.JPG" alt="Capitol Patru 2">
+                                  <img src="Assets/Images/capitol patru trei.jpg" alt="Capitol Patru 3">
+                                  <img src="Assets/Images/capitol patru patru.JPG" alt="Capitol Patru 4">
+                            </div>
+                            <div class="chapter-text final-declaration">
+                                <p>Ador cand radem (mai mult tu de mine), iubesc cand suntem copii, cand ne ghiontanim, ne tachinam sau radem unul de altul.<br>Nu te schimba niciodata si nu te opri din a ma enerva, nu ai mai fi tu daca n-ai face asta.</p>
+                                <p class="declaration">Tu ești inima mea, sufletul meu, totul pentru mine. 💕</p>
+                            </div>
+                            <div class="love-meter">
+                                <span class="meter-label">Nivel Zurlie:</span>
+                                <div class="meter-bar">
+                                    <div class="meter-fill infinite"></div>
+                                </div>
+                                <span class="meter-value">∞</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capitol Nou -->
+                    <div class="timeline-chapter final-chapter" data-chapter="11">
+                        <div class="chapter-marker">
+                        </div>
+                        <div class="chapter-content glassmorphism special-glow">
+                            <div class="chapter-badge valentines">Warning! Rare beauty down below!</div>
+                            <h3>My Valentine, my life, my everything 💘</h3>
+                            <div class="chapter-gallery multi-gallery">
+                                <div class="puzzle-img puzzle-1"></div>
+                                <div class="puzzle-img puzzle-2"></div>
+                                <div class="puzzle-img puzzle-3"></div>
+                                <div class="puzzle-img puzzle-4"></div>
+                            </div>
+                            <div class="chapter-text final-declaration">
+                                <p>Si ai crescut atat de mult in inima mea incat nu mai pot concepe sa nu faci parte din viata si gandurile mele...</p>
+                                <p class="declaration">Tu ești inima mea, sufletul meu, totul pentru mine. 💕</p>
+                            </div>
+                            <div class="love-meter">
+                                <span class="meter-label">Nivel Iubire:</span>
+                                <div class="meter-bar">
+                                    <div class="meter-fill infinite"></div>
+                                </div>
+                                <span class="meter-value">∞</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPITOLUL 2: Albumul Nostru -->
+        <section id="album" class="album-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul II</span>
+                    <h2 class="section-title epic-title">
+                        <span class="title-icon">📸</span>
+                        Albumul Nostru de Amintiri
+                        <span class="title-decoration">━━━ 🌻 ━━━</span>
+                    </h2>
+                </div>
+
+                <!-- Album Cover - Interactive -->
+                <div class="album-cover" id="albumCover">
+                    <div class="cover-front">
+                        <div class="cover-decoration top-left">🌻</div>
+                        <div class="cover-decoration top-right">☀️</div>
+                        <div class="cover-decoration bottom-left">🌻</div>
+                        <div class="cover-decoration bottom-right">🌼</div>
+                        <div class="cover-spine"></div>
+                        <div class="cover-title">
+                            <h3>Puki-1 & Puki-2</h3>
+                            <p>O Poveste de Dragoste</p>
+                            <span class="cover-date">2024 - ∞</span>
+                        </div>
+                        <div class="cover-photo">
+                            <img src="Assets/Images/anca-1.jpg" alt="Noi">
+                        </div>
+                        <p class="cover-instruction">📖 Click pentru a deschide albumul</p>
+                    </div>
+                </div>
+
+                <!-- Album Pages -->
+                <div class="album-pages hidden" id="albumPages">
+                    <div class="album-navigation">
+                        <button class="album-nav-btn prev" id="albumPrev">◀ Înapoi</button>
+                        <span class="album-page-indicator">Pagina <span id="currentPage">1</span> din <span id="totalPages">10</span></span>
+                        <button class="album-nav-btn next" id="albumNext">Înainte ▶</button>
+                    </div>
+
+                    <div class="album-page-container" id="albumPageContainer">
+                        <!-- Page 1 -->
+                        <div class="album-page active" data-page="1">
+                            <div class="page-header">
+                                <h4>Albumul💘</h4>
+                            </div>
+                            <div class="page-photos">
+                                <div class="polaroid">
+                                    <img src="Assets/Images/IMG_0479.jpeg" alt="Moment 1">
+                                    <p class="polaroid-caption">Explorari 🌍</p>
+                                </div>
+                                <div class="polaroid tilted-left">
+                                    <img src="Assets/Images/IMG_0507.jpeg" alt="Moment 2">
+                                    <p class="polaroid-caption">Pupici 💑</p>
+                                </div>
+                                <div class="polaroid tilted-right">
+                                    <img src="Assets/Images/IMG_0517.jpeg" alt="Moment 3">
+                                    <p class="polaroid-caption">Zâmbete 😊</p>
+                                </div>
+                            </div>
+                            <div class="page-doodle">💝</div>
+                        </div>
+
+                        <!-- Page 2 -->
+                        <div class="album-page" data-page="2">
+                            <div class="page-header">
+                                <h4>Inimii</h4>
+                            </div>
+                            <div class="page-photos">
+                                <div class="polaroid">
+                                    <img src="Assets/Images/IMG_0576.JPG" alt="Aventură 1">
+                                    <p class="polaroid-caption">Liniste</p>
+                                </div>
+                                <div class="polaroid tilted-left">
+                                    <img src="Assets/Images/IMG_0586.JPG" alt="Aventură 2">
+                                    <p class="polaroid-caption">"Uita-te in sus sa iasa poza cool"</p>
+                                </div>
+                                <div class="polaroid tilted-right">
+                                    <img src="Assets/Images/IMG_0665.JPG" alt="Aventură 3">
+                                    <p class="polaroid-caption">Noi doi 💕</p>
+                                </div>
+                            </div>
+                            <div class="page-sticker">🏔️</div>
+                        </div>
+
+                        <!-- Page 3 -->
+                        <div class="album-page" data-page="3">
+                            <div class="page-header">
+                                <h4>Mele</h4>
+                            </div>
+                            <div class="page-photos">
+                                <div class="polaroid">
+                                    <img src="Assets/Images/IMG_0697.jpeg" alt="Moment 1">
+                                    <p class="polaroid-caption">"Uite un nor!!!"</p>
+                                </div>
+                                <div class="polaroid tilted-left">
+                                    <img src="Assets/Images/IMG_2173.JPG" alt="Moment 2">
+                                    <p class="polaroid-caption">Dublin Bus</p>
+                                </div>
+                                <div class="polaroid tilted-right">
+                                    <img src="Assets/Images/IMG_2178.JPG" alt="Moment 3">
+                                    <p class="polaroid-caption">Centra Roll</p>
+                                </div>
+                            </div>
+                            <div class="page-tape"></div>
+                        </div>
+
+                        <!-- Page 4 -->
+                        <div class="album-page" data-page="4">
+                            <div class="page-header">
+                                <h4>Incepe</h4>
+                            </div>
+                            <div class="page-photos">
+                                <div class="polaroid">
+                                    <img src="Assets/Images/IMG_2195.JPG" alt="Zâmbet 1">
+                                    <p class="polaroid-caption">Cocktail-isti</p>
+                                </div>
+                                <div class="polaroid tilted-left">
+                                    <img src="Assets/Images/IMG_2207.JPG" alt="Zâmbet 2">
+                                    <p class="polaroid-caption">Mine</p>
+                                </div>
+                                <div class="polaroid tilted-right">
+                                    <img src="Assets/Images/IMG_2213.JPG" alt="Zâmbet 3">
+                                    <p class="polaroid-caption">Biliardisti</p>
+                                </div>
+                            </div>
+                            <div class="page-doodle">🌈</div>
+                        </div>
+
+                        <!-- Page 5 -->
+                        <div class="album-page" data-page="5">
+                            <div class="page-header">
+                                <h4>Si se</h4>
+                            </div>
+                            <div class="page-photos">
+                                <div class="polaroid">
+                                    <img src="Assets/Images/IMG_2252.JPG" alt="Călătorie 1">
+                                    <p class="polaroid-caption">Jmekeri</p>
+                                </div>
+                                <div class="polaroid tilted-left">
+                                    <img src="Assets/Images/IMG_2260.JPG" alt="Călătorie 2">
+                                    <p class="polaroid-caption">Read my happy eyes but don't be jealous</p>
+                                </div>
+                                <div class="polaroid tilted-right">
+                                    <img src="Assets/Images/IMG_2512.JPG" alt="Călătorie 3">
+                                    <p class="polaroid-caption">Așa zisa plaja</p>
+                                </div>
+                            </div>
+                            <div class="page-sticker">✈️</div>
+                        </div>
+
+                        <!-- Page 6 -->
+                        <div class="album-page" data-page="6">
+                            <div class="page-header">
+                                <h4>Termina</h4>
+                            </div>
+                            <div class="page-photos">
+                                <div class="polaroid">
+                                    <img src="Assets/Images/IMG_2531.JPG" alt="Iarnă 1">
+                                    <p class="polaroid-caption">Rasete</p>
+                                </div>
+                                <div class="polaroid tilted-left">
+                                    <img src="Assets/Images/IMG_2582.JPG" alt="Iarnă 2">
+                                    <p class="polaroid-caption">Implinire</p>
+                                </div>
+                                <div class="polaroid tilted-right">
+                                    <img src="Assets/Images/IMG_3159.JPG" alt="Iarnă 3">
+                                    <p class="polaroid-caption">Nuntiști</p>
+                                </div>
+                            </div>
+                            <div class="page-doodle">⛄</div>
+                        </div>
+
+                        <!-- Page 7 -->
+                        <div class="album-page" data-page="7">
+                            <div class="page-header">
+                                <h4>Cu</h4>
+                            </div>
+                            <div class="page-photos">
+                                <div class="polaroid">
+                                    <img src="Assets/Images/IMG_3568.JPG" alt="Primăvară 1">
+                                    <p class="polaroid-caption">We</p>
+                                </div>
+                                <div class="polaroid tilted-left">
+                                    <img src="Assets/Images/IMG_3583.JPG" alt="Primăvară 2">
+                                    <p class="polaroid-caption">Bloom</p>
+                                </div>
+                                <div class="polaroid tilted-right">
+                                    <img src="Assets/Images/IMG_3601.JPG" alt="Primăvară 3">
+                                    <p class="polaroid-caption">Everyday 🌻</p>
+                                </div>
+                            </div>
+                            <div class="page-tape pink"></div>
+                        </div>
+
+                        <!-- Page 8 -->
+                        <div class="album-page" data-page="8">
+                            <div class="page-header">
+                                <h4>Tine ☀️</h4>
+                            </div>
+                            <div class="page-photos">
+                                <div class="polaroid">
+                                    <img src="Assets/Images/IMG_3652.JPG" alt="Vară 1">
+                                    <p class="polaroid-caption">Căldură 🌞</p>
+                                </div>
+                                <div class="polaroid tilted-left">
+                                    <img src="Assets/Images/IMG_4214.JPG" alt="Vară 2">
+                                    <p class="polaroid-caption">Zurlea 1&2</p>
+                                </div>
+                                <div class="polaroid tilted-right">
+                                    <img src="Assets/Images/IMG_5081.JPG" alt="Vară 3">
+                                    <p class="polaroid-caption">Vacanță 🌴</p>
+                                </div>
+                            </div>
+                            <div class="page-sticker">🌻</div>
+                        </div>
+
+                        <!-- Page 9 -->
+                        <div class="album-page" data-page="9">
+                            <div class="page-header">
+                                <h4>Te voi iubi cu disperare 📆</h4>
+                            </div>
+                            <div class="page-photos">
+                                <div class="polaroid">
+                                    <img src="Assets/Images/IMG_9362.JPG" alt="Recent 1">
+                                    <p class="polaroid-caption">Si maine 📅</p>
+                                </div>
+                                <div class="polaroid tilted-left">
+                                    <img src="Assets/Images/IMG_9439.JPG" alt="Recent 2">
+                                    <p class="polaroid-caption">Si poimaine 💕</p>
+                                </div>
+                                <div class="polaroid tilted-right">
+                                    <img src="Assets/Images/IMG_9460.JPG" alt="Recent 3">
+                                    <p class="polaroid-caption">Si pentru totdeauna 💝</p>
+                                </div>
+                            </div>
+                            <div class="page-doodle">💌</div>
+                        </div>
+
+                        <!-- Page 10 - Final -->
+                        <div class="album-page" data-page="10">
+                            <div class="page-header final">
+                                <h4>Și Povestea Continuă... 💕</h4>
+                            </div>
+                            <div class="page-photos centered">
+                                <div class="polaroid big">
+                                    <img src="Assets/Images/IMG_9598.jpeg" alt="Noi">
+                                    <p class="polaroid-caption">Noi, pentru totdeauna ❤️</p>
+                                </div>
+                            </div>
+                            <div class="page-message">
+                                <p class="final-album-text">Fiecare pagină din acest album reprezintă o bucățică din inima mea.</p>
+                                
+                            </div>
+                            <div class="page-signature">
+                                <p>Cu tot sufletul,</p>
+                                <p class="signature-name">Valentin 💕</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPITOLUL 3: EKG Section -->
+        <section id="ekg" class="ekg-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul III</span>
+                    <h2 class="section-title">
+                        <span class="ekg-icon">💓</span>
+                        Monitor Cardiac
+                    </h2>
+                </div>
+                
+                <div class="monitor-frame glassmorphism">
+                    <div class="monitor-header">
+                        <div class="monitor-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="monitor-title">MONITOR CARDIAC - Pacient: Valentin 💕</span>
+                    </div>
+                    
+                    <div class="monitor-screen">
+                        <div class="ekg-display">
+                            <svg viewBox="0 0 1000 200" class="ekg-svg" id="ekgSvg">
+                                <defs>
+                                    <linearGradient id="ekgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#ff4757"/>
+                                        <stop offset="50%" style="stop-color:#ff6b81"/>
+                                        <stop offset="100%" style="stop-color:#ff4757"/>
+                                    </linearGradient>
+                                    <filter id="glow">
+                                        <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <polyline id="ekgLine" class="ekg-main-line" points="" filter="url(#glow)"/>
+                            </svg>
+                            <div class="ekg-heart" id="ekgHeart">❤️</div>
+                        </div>
+                        
+                        <div class="vital-signs">
+                            <div class="vital-box pulse-animation">
+                                <span class="vital-label">BPM</span>
+                                <span class="vital-value" id="bpmValue">120</span>
+                                <span class="vital-status">↑ CÂND TE VĂD</span>
+                            </div>
+                            <div class="vital-box">
+                                <span class="vital-label">Nivel Iubire</span>
+                                <span class="vital-value infinity-pulse">∞</span>
+                                <span class="vital-status">MAXIM</span>
+                            </div>
+                            <div class="vital-box">
+                                <span class="vital-label">Fluturi în stomac</span>
+                                <span class="vital-value" id="butterfliesValue">999+</span>
+                                <span class="vital-status">CRITICI</span>
+                            </div>
+                            <div class="vital-box special">
+                                <span class="vital-label">Anca în gânduri</span>
+                                <span class="vital-value">24/7</span>
+                                <span class="vital-status">CONSTANT</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="monitor-footer">
+                        <p class="monitor-note">⚠️ ATENȚIE: Valorile cresc exponențial în prezența doftoriței Anca!</p>
+                    </div>
+                </div>
+                
+                <div class="ekg-joke-box glassmorphism">
+                    <p class="joke-setup">🩺 Medicul: "Ce problemă aveți?"</p>
+                    <p class="joke-punchline">😍 Eu: "Inima mea bate: PU-KI, PU-KI, PU-KI! E normal?"</p>
+                    <p class="joke-response">👨‍⚕️ Medicul: "Da, e sindromul iubirii adevărate. Fără leac!"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPITOLUL 4: Rețeta Section -->
+        <section id="reteta" class="prescription-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul IV</span>
+                    <h2 class="section-title">
+                        <span class="rx-symbol">℞</span>
+                        Rețetă Medicală
+                    </h2>
+                </div>
+                
+                <div class="prescription-paper glassmorphism">
+                    <div class="prescription-header">
+                        <div class="hospital-logo animated-logo">🏥</div>
+                        <div class="hospital-info">
+                            <h3>SPITALUL IUBIRII ETERNE</h3>
+                            <p>Secția de Cardiologie Romantică</p>
+                            <p>Str. Îndrăgostiților Nr. 14, Februarie</p>
+                        </div>
+                        <div class="prescription-stamp rotating">
+                            <span>URGENT</span>
+                            <span>💕</span>
+                        </div>
+                    </div>
+                    
+                    <div class="prescription-body">
+                        <div class="patient-info">
+                            <p><strong>Pacient:</strong> Inima lui Valentin</p>
+                            <p><strong>Diagnostic:</strong> Îndrăgostire Acută de Dr. Anca (ICD-10: L.O.V.E)</p>
+                            <p><strong>Simptome:</strong> Puls accelerat, zâmbet permanent, gânduri constante la ea</p>
+                        </div>
+                        
+                        <div class="prescription-content">
+                            <h4>TRATAMENT RECOMANDAT:</h4>
+                            
+                            <div class="medicine-item hover-grow">
+                                <span class="medicine-icon">💊</span>
+                                <div class="medicine-details">
+                                    <p class="medicine-name">ANCAMICINĂ 500mg</p>
+                                    <p class="medicine-dosage">Doză: 1 îmbrățișare dimineața, 1 sărut la prânz, nelimitat seara</p>
+                                    <p class="medicine-note">⚠️ Atenție: Poate cauza dependență severă și fericire extremă!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="medicine-item hover-grow">
+                                <span class="medicine-icon">💉</span>
+                                <div class="medicine-details">
+                                    <p class="medicine-name">PUPICILINĂ Forte</p>
+                                    <p class="medicine-dosage">Administrare: Intravenos prin priviri, minim 100x/zi</p>
+                                    <p class="medicine-note">📋 Se administrează cu "Te iubesc" la fiecare doză</p>
+                                </div>
+                            </div>
+                            
+                            <div class="medicine-item hover-grow">
+                                <span class="medicine-icon">🩹</span>
+                                <div class="medicine-details">
+                                    <p class="medicine-name">VITAMINA ANCA</p>
+                                    <p class="medicine-dosage">Tratament pe viață - nu se întrerupe NICIODATĂ</p>
+                                    <p class="medicine-note">✨ Efecte secundare: Fericire cronică, zâmbet permanent</p>
+                                </div>
+                            </div>
+
+                            <div class="medicine-item hover-grow special-medicine">
+                                <span class="medicine-icon">💝</span>
+                                <div class="medicine-details">
+                                    <p class="medicine-name">IUBIRELINĂ XR (Extra Romance)</p>
+                                    <p class="medicine-dosage">Administrare continuă, 24/7, pe toată viața</p>
+                                    <p class="medicine-note">💕 Ingredient activ: 100% dragoste pură pentru Anca!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="prescription-footer">
+                            <div class="doctor-signature">
+                                <p>Medic prescriptor:</p>
+                                <p class="signature animated-signature">Dr. Îndrăgostit</p>
+                                <p class="specialty">Specialist în Te Iubesc</p>
+                            </div>
+                            <div class="prescription-seal">
+                                <div class="seal-circle spinning-seal">
+                                    <span>💕</span>
+                                    <span>VALABIL</span>
+                                    <span>PE VIAȚĂ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="refill-notice glassmorphism">
+                    <p>📋 Rețeta se poate reînnoi cu un simplu "Te iubesc, Anca!" 💕</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPITOLUL 5: Analize de Laborator -->
+        <section id="analize" class="lab-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul V</span>
+                    <h2 class="section-title">
+                        <span class="lab-icon">🔬</span>
+                        Analize de Laborator
+                    </h2>
+                </div>
+                
+                <div class="lab-results">
+                    <div class="lab-card glassmorphism">
+                        <div class="lab-header">
+                            <span class="lab-type">HEMOLEUCOGRAMĂ EMOȚIONALĂ</span>
+                            <span class="lab-date">24.01.2026</span>
+                        </div>
+                        <div class="lab-body">
+                            <div class="lab-item">
+                                <span class="lab-name">Nivel Iubire (UI)</span>
+                                <div class="lab-bar">
+                                    <div class="lab-fill animated-fill" style="--fill: 100%"></div>
+                                </div>
+                                <span class="lab-value">∞</span>
+                                <span class="lab-status high">PESTE LIMITĂ!</span>
+                            </div>
+                            <div class="lab-item">
+                                <span class="lab-name">Fericire (ng/mL)</span>
+                                <div class="lab-bar">
+                                    <div class="lab-fill animated-fill" style="--fill: 98%"></div>
+                                </div>
+                                <span class="lab-value">9999+</span>
+                                <span class="lab-status high">MAXIM</span>
+                            </div>
+                            <div class="lab-item">
+                                <span class="lab-name">Adorație pentru Anca</span>
+                                <div class="lab-bar">
+                                    <div class="lab-fill animated-fill" style="--fill: 100%"></div>
+                                </div>
+                                <span class="lab-value">100%</span>
+                                <span class="lab-status high">CRITIC</span>
+                            </div>
+                            <div class="lab-item">
+                                <span class="lab-name">Gânduri la ea/minut</span>
+                                <div class="lab-bar">
+                                    <div class="lab-fill animated-fill" style="--fill: 95%"></div>
+                                </div>
+                                <span class="lab-value">847</span>
+                                <span class="lab-status high">CONSTANT</span>
+                            </div>
+                            <div class="lab-item">
+                                <span class="lab-name">Dorință de îmbrățișări</span>
+                                <div class="lab-bar">
+                                    <div class="lab-fill animated-fill" style="--fill: 100%"></div>
+                                </div>
+                                <span class="lab-value">∞</span>
+                                <span class="lab-status high">URGENT!</span>
+                            </div>
+                        </div>
+                        <div class="lab-footer">
+                            <p>⚠️ CONCLUZIE: Pacientul necesită tratament urgent cu Anca!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="lab-card dna-card glassmorphism">
+                        <div class="lab-header">
+                            <span class="lab-type">🧬 ANALIZĂ ADN ROMANTIC</span>
+                        </div>
+                        <div class="dna-helix animated-dna">
+                            <div class="dna-strand"></div>
+                            <div class="dna-strand"></div>
+                        </div>
+                        <div class="dna-result">
+                            <p>Compatibilitate genetică cu Anca:</p>
+                            <span class="dna-percent counter" data-target="100">100</span>%
+                            <p class="dna-note">Suflete pereche confirmate științific! 💕</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="microscope-view glassmorphism">
+                    <div class="microscope-frame">
+                        <div class="microscope-lens">🔬</div>
+                        <h3>Vedere la Microscop</h3>
+                        <p>Celulele mele când te văd:</p>
+                        <div class="cells-container" id="cellsContainer">
+                        </div>
+                        <p class="microscope-note">Toate celulele dansează de fericire! 💃</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPITOLUL 6: Glume Medicale -->
+        <section id="glume" class="jokes-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul VI</span>
+                    <h2 class="section-title">
+                        
+                        Mereu te intrebi de ce esti atat de speciala in ochii mei...
+                    </h2>
+                    <p class="chapter-subtitle">Pai cum sa nu fie puki meu cea mai speciala atunci cand...</p>
+                </div>
+                
+                <div class="jokes-grid">
+                    <div class="joke-card glassmorphism hover-tilt">
+                        <div class="joke-header">
+                            <span class="joke-number">01</span>
+                            <span class="joke-emoji">🫀</span>
+                        </div>
+                        <p class="joke-text">Mi-a fost si ma face sa simt ca imi va fi alaturi atunci cand voi fi incercat de zile mai putin bune...</p>
+                        <div class="joke-reaction">😍💕</div>
+                    </div>
+                    
+                    <div class="joke-card glassmorphism hover-tilt">
+                        <div class="joke-header">
+                            <span class="joke-number">02</span>
+                            <span class="joke-emoji">🧬</span>
+                        </div>
+                        <p class="joke-text">Este langa mine si imi ofera sprijin cand am nevoie, indiferent de ora, de zi, de stare, de circumstante...</p>
+                        <div class="joke-reaction">🦠💝</div>
+                    </div>
+                    
+                    <div class="joke-card glassmorphism hover-tilt">
+                        <div class="joke-header">
+                            <span class="joke-number">03</span>
+                            <span class="joke-emoji">💉</span>
+                        </div>
+                        <p class="joke-text">Are cele mai dulci mangaieri, cea mai calda voce si cladura pe care mi-o ofera cand sunt langa ea imi incalzeste sufletul...</p>
+                        <div class="joke-reaction">😊✨</div>
+                    </div>
+                    
+                    <div class="joke-card glassmorphism hover-tilt">
+                        <div class="joke-header">
+                            <span class="joke-number">04</span>
+                            <span class="joke-emoji">🩻</span>
+                        </div>
+                        <p class="joke-text">Fara sa isi dea seama, prezenta ei in viata mea a venit la pachet cu un val de optimism, lumina, fericire si ambitie...</p>
+                        <div class="joke-reaction">🧠💕</div>
+                    </div>
+                    
+                    <div class="joke-card glassmorphism hover-tilt">
+                        <div class="joke-header">
+                            <span class="joke-number">05</span>
+                            <span class="joke-emoji">🔬</span>
+                        </div>
+                        <p class="joke-text">Cand sunt cu ea, simt ca universul ma iubeste. Ador prezenta ei, ador tot ce facem impreuna... (Atata timp cat nu implica pensete)...</p>
+                        <div class="joke-reaction">📊💗</div>
+                    </div>
+                    
+                    <div class="joke-card glassmorphism hover-tilt">
+                        <div class="joke-header">
+                            <span class="joke-number">06</span>
+                            <span class="joke-emoji">🏥</span>
+                        </div>
+                        <p class="joke-text">Ador copilul din ea. Fiecare expresie, raset, zambet, moment amuzant, moment enervant... toate ma fac sa nu ma mai opresc din a ma indragosti din ea din ce in ce mai mult...</p>
+                        <div class="joke-reaction">💊❤️</div>
+                    </div>
+
+                    <div class="joke-card glassmorphism hover-tilt special-joke">
+                        <div class="joke-header">
+                            <span class="joke-number">07</span>
+                            <span class="joke-emoji">🩺</span>
+                        </div>
+                        <p class="joke-text">Ma simt incomplet fara ea langa mine. Mereu ard de nerabdare sa ma reintalnesc cu ea, si simt ca nu exista fericire mai profunda si mai pura decat fericirea care imi bucura inima cand ma gandesc la ea...</p>
+                        <div class="joke-reaction">🦋💕</div>
+                    </div>
+
+                    <div class="joke-card glassmorphism hover-tilt special-joke">
+                        <div class="joke-header">
+                            <span class="joke-number">08</span>
+                            <span class="joke-emoji">💊</span>
+                        </div>
+                        <p class="joke-text">Ma simt mai valoros 💎 si mai puternic 💪 cu ea langa mine...</p>
+                        <div class="joke-reaction">📚❤️</div>
+                    </div>
+
+                    <div class="joke-card glassmorphism hover-tilt">
+                        <div class="joke-header">
+                            <span class="joke-number">09</span>
+                            <span class="joke-emoji">🧪</span>
+                        </div>
+                        <p class="joke-text">Ai reușit sa faci din mine un indragostit cronic... mno bravo Puki...</p>
+                        <div class="joke-reaction">⚗️💝</div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <!-- CAPITOLUL 7: Scanare CT -->
+        <section id="scanare" class="ct-scan-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul VII</span>
+                    <h2 class="section-title">
+                        <span class="ct-icon">🫀</span>
+                        Scanare CT - Inima Mea
+                    </h2>
+                </div>
+                
+                <div class="ct-viewer glassmorphism">
+                    <div class="ct-frame">
+                        <div class="ct-screen">
+                            <div class="ct-grid"></div>
+                            <div class="scan-line animated-scan"></div>
+                            <div class="heart-3d rotating-heart">
+                                <div class="heart-layer layer-1">❤️</div>
+                                <div class="heart-layer layer-2">💕</div>
+                                <div class="heart-layer layer-3">ANCA</div>
+                            </div>
+                        </div>
+                        <div class="ct-info">
+                            <div class="ct-data">
+                                <span class="data-label">SUBIECT:</span>
+                                <span class="data-value">Inima Mea</span>
+                            </div>
+                            <div class="ct-data">
+                                <span class="data-label">CONȚINUT:</span>
+                                <span class="data-value">100% Anca</span>
+                            </div>
+                            <div class="ct-data">
+                                <span class="data-label">STATUS:</span>
+                                <span class="data-value blink">ÎNDRĂGOSTIT CRONIC</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ct-diagnosis">
+                        <h3>📋 Raport Scanare CT</h3>
+                        <p>Scanarea CT a relevat că inima pacientului conține:</p>
+                        <ul class="ct-findings">
+                            <li class="finding-item">💕 Cameră stângă: Plină cu iubire pentru Anca</li>
+                            <li class="finding-item">💕 Cameră dreaptă: Plină cu amintiri frumoase</li>
+                            <li class="finding-item">💕 Atriu: Ocupat de gânduri la ea</li>
+                            <li class="finding-item">💕 Ventricul: Pompă fericire non-stop</li>
+                            <li class="finding-item">💕 Valve: Deschise doar pentru Anca</li>
+                        </ul>
+                        <p class="ct-conclusion">⚠️ CONCLUZIE: Inima funcționează perfect doar în prezența ei!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPITOLUL 8: Galerie Video -->
+        <section id="video-gallery" class="video-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul VIII</span>
+                    <h2 class="section-title">
+                        <span class="video-icon">🎬</span>
+                        Cinematograful Amintirilor
+                    </h2>
+                    <p class="chapter-subtitle">Momente în mișcare</p>
+                </div>
+
+                <div class="cinema-screen glassmorphism">
+                    <div class="cinema-frame">
+                        <div class="video-container">
+                            <video controls playsinline class="main-video" poster="Assets/Images/IMG_7237363.jpg">
+                                <source src="Assets/Videos/IMG_2560.mov" type="video/mp4">
+                            </video>
+                        </div>
+                        <p class="video-caption">🎥 Momente de neuitat împreună</p>
+                    </div>
+
+                    <div class="cinema-frame">
+                        <div class="video-container">
+                            <video controls playsinline class="main-video" poster="Assets/Images/IMG_4649.jpg">
+                                <source src="Assets/Videos/IMG_3711.mov" type="video/mp4">
+                            </video>
+                        </div>
+                        <p class="video-caption">🎥 Aventuri și bucurii</p>
+                    </div>
+                </div>
+
+                <div class="cinema-ticket glassmorphism">
+                    <div class="ticket-left">
+                        <span class="ticket-icon">🎟️</span>
+                    </div>
+                    <div class="ticket-center">
+                        <h4>BILET VIP</h4>
+                        <p>Film: "Povestea Noastră de Dragoste"</p>
+                        <p>Protagoniști: Anca & Valentin</p>
+                        <p>Durată: O viață întreagă</p>
+                    </div>
+                    <div class="ticket-right">
+                        <span class="ticket-number">💕</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPITOLUL 9: Galerie cu Radiografii (poze) -->
+        <section id="galerie" class="xray-gallery-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul IX</span>
+                    <h2 class="section-title">
+                        <span class="xray-icon">🩻</span>
+                        Radiografii ale Fericirii
+                    </h2>
+                    
+                </div>
+                
+                <div class="xray-gallery masonry-grid">
+                    <div class="xray-item" data-caption="Diagnostic: Fericire Extremă 💕">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_0479.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Analiză: Iubire Pură 💖">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_0507.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Rezultat: Compatibilitate 100% ✨">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_0517.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="RMN: Suflete Pereche 💗">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_0576.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Scanare: Moment Perfect 🌟">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_0586.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Ecografie: Fericire 😊">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_0665.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Test: Dragoste Infinită 💝">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_0697.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Radiografie: Împreună 💑">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_5082.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Tomografie: Aventură 🗺️">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_5108.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Analiză: Bucurie 🌈">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_5113.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Examinare: Zâmbet 😄">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_6658.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Diagnostic: Perfecțiune 💯">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_7333.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Consultație: Iubire 💕">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_7794.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Test: Fericire Maximă 🌟">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_9216.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Analiză: Momente Speciale ✨">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_9275.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Radiografie: Amintiri Prețioase 💎">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_9445.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Ecografie: Dragoste Eternă 💗">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_9504.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Tomografie: Suflet Pereche 💞">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_9530.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Scanare: Iubire Veșnică 💕">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_9566.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Test Final: Perfecțiune Absolută 💝">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_9598.jpeg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Moment Magic ✨">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/IMG_9658.JPG" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Noi Doi 💑">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/awwe.jpg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Frumusețe 🌸">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/dsaaa.jpg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Momente Speciale 💕">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/tempImg.jpg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Amintiri 💖">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/tempImg 2.jpg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xray-item" data-caption="Fericiți Împreună 💝">
+                        <div class="xray-frame">
+                            <img src="Assets/Images/tempImg 3.jpg" alt="Memory" loading="lazy">
+                            <div class="xray-overlay">
+                                <span class="view-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPITOLUL 10: Sala de Operație - Interactiv -->
+        <section id="operatie" class="surgery-section">
+            <div class="section-container">
+                <div class="chapter-header">
+                    <span class="chapter-number">Capitolul X</span>
+                    <h2 class="section-title">
+                        <span class="surgery-icon">🏥</span>
+                        Sala de Operație a Iubirii
+                    </h2>
+                    <p class="chapter-subtitle">Mini-joc interactiv: Vindecă inima!</p>
+                </div>
+                
+                <div class="surgery-room glassmorphism">
+                    <div class="surgery-table">
+                        <div class="patient-heart" id="surgeryHeart">🫀</div>
+                        <div class="surgery-tools">
+                            <button class="tool-btn hover-bounce" data-tool="syringe" title="Injectează iubire">💉</button>
+                            <button class="tool-btn hover-bounce" data-tool="pill" title="Administrează fericire">💊</button>
+                            <button class="tool-btn hover-bounce" data-tool="bandage" title="Aplică un pansament">🩹</button>
+                            <button class="tool-btn hover-bounce" data-tool="stethoscope" title="Ascultă bătăile">🩺</button>
+                            <button class="tool-btn hover-bounce" data-tool="kiss" title="Tratament special">💋</button>
+                            <button class="tool-btn hover-bounce" data-tool="hug" title="Îmbrățișare">🤗</button>
+                        </div>
+                        <div class="surgery-message" id="surgeryMessage">
+                            Alege un instrument pentru a trata inima! 👆
+                        </div>
+                    </div>
+                    
+                    <div class="surgery-monitor">
+                        <div class="monitor-display">
+                            <span class="monitor-label">NIVEL VINDECARE</span>
+                            <div class="healing-bar">
+                                <div class="healing-fill" id="healingFill"></div>
+                            </div>
+                            <span class="healing-percent" id="healingPercent">0%</span>
+                        </div>
+                        <p class="surgery-status" id="surgeryStatus">Așteptăm tratament...</p>
+                    </div>
+                </div>
+
+                <div class="surgery-complete hidden" id="surgeryComplete">
+                    <h3>🎉 Operație Reușită!</h3>
+                    <p>Inima e complet vindecată cu iubire! 💕</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final - Externare -->
+        <section id="externare" class="discharge-section">
+            <div class="section-container">
+                <div class="discharge-paper glassmorphism special-glow">
+                    <h2 class="discharge-title">📄 BILET DE EXTERNARE</h2>
+                    
+                    <div class="discharge-content">
+                        <div class="discharge-header-info">
+                            <p><strong>Pacient:</strong> Inima lui Valentin</p>
+                            <p><strong>Data externării:</strong> NICIODATĂ (tratament pe viață)</p>
+                            <p><strong>Medic curant:</strong> Dr. Anca 🩺</p>
+                        </div>
+                        
+                        <div class="discharge-diagnosis">
+                            <h3>DIAGNOSTIC LA EXTERNARE:</h3>
+                            <p class="final-diagnosis animated-text">Îndrăgostire Cronică Ireversibilă de Dr. Anca</p>
+                        </div>
+                        
+                        <div class="discharge-recommendations">
+                            <h3>RECOMANDĂRI:</h3>
+                            <ul class="recommendations-list">
+                                <li class="rec-item">✅ Continuarea tratamentului cu iubire zilnică</li>
+                                <li class="rec-item">✅ Îmbrățișări la fiecare 4 ore (sau mai des)</li>
+                                <li class="rec-item">✅ "Te iubesc" administrat frecvent</li>
+                                <li class="rec-item">✅ Evitarea separării prelungite</li>
+                                <li class="rec-item">✅ Aventuri romantice regulate</li>
+                                <li class="rec-item">✅ Sărut dimineața și seara (obligatoriu!)</li>
+                                <li class="rec-item">✅ Zâmbet permanent în prezența ei</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="final-message">
+                            <div class="heart-animation">
+                                <span class="big-heart beating">❤️</span>
+                            </div>
+                            <h3 class="final-declaration">Kicsikém, te iubesc!</h3>
+                            <p class="final-text">Tu ești cel mai bun medicament pentru sufletul meu.</p>
+                            <p class="final-text">Ești tot ce mi-am dorit și mai mult.</p>
+                            <p class="final-text valentines-wish">La mulți ani de Valentine's Day! 💕</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <button class="magic-button neon-btn" id="magicBtn">
+                        <span class="btn-icon">💉</span>
+                        <span class="btn-text">Administrează doza FINALĂ de IUBIRE!</span>
+                        <span class="btn-sparkle">✨</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="loveExplosion"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-ekg">
+                <svg viewBox="0 0 400 50" class="footer-ekg-line">
+                    <polyline points="0,25 50,25 60,25 70,10 80,40 90,25 100,25 150,25 160,25 170,10 180,40 190,25 200,25 250,25 260,25 270,10 280,40 290,25 300,25 350,25 360,25 370,10 380,40 390,25 400,25"/>
+                </svg>
+            </div>
+            <p class="footer-text">Călătoria mea: inima ta, bilet doar dus ✈️</p>
+           
+            
+            
+        </div>
+    </footer>
+
+    <!-- Lightbox pentru galerie -->
+    <div id="lightbox" class="lightbox hidden">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-prev">❮</button>
+        <button class="lightbox-next">❯</button>
+        <div class="lightbox-content">
+            <img src="" alt="Preview" id="lightboxImg">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+        <div class="lightbox-counter">
+            <span id="lightboxCounter"></span>
+        </div>
+    </div>
+
+    <!-- Floarea Soarelui care creste pe scroll -->
+    <div id="growingSunflower">
+        <img src="Assets/Images/floarea-soarelui.png" alt="Floarea Soarelui" id="sunflowerImg">
+    </div>
+
+        <script src="js/script.js"></script>
+
+        <!-- Floarea Soarelui - Efect de crestere pe scroll -->
+        <style>
+            #growingSunflower {
+                position: fixed;
+                right: 20px;
+                bottom: 0;
+                z-index: 100;
+                pointer-events: none;
+                transform: translateY(100%);
+                transition: transform 0.1s ease-out;
+            }
+            #sunflowerImg {
+                width: auto;
+                height: 140vh;
+                max-height: 1200px;
+                object-fit: contain;
+            }
+            @media (max-width: 768px) {
+                #growingSunflower {
+                    right: 5px;
+                }
+                #sunflowerImg {
+                    height: 100vh;
+                    max-height: 800px;
+                }
+            }
+        </style>
+        <script>
+            // Floarea Soarelui - creste pe masura ce faci scroll
+            (function() {
+                const sunflower = document.getElementById('growingSunflower');
+                const sunflowerImg = document.getElementById('sunflowerImg');
+                if (!sunflower || !sunflowerImg) return;
+                
+                let ticking = false;
+                
+                function updateSunflower() {
+                    if (!ticking) {
+                        requestAnimationFrame(function() {
+                            // Calculam cat de mult am facut scroll (procent din pagina)
+                            const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                            const docHeight = Math.max(
+                                document.body.scrollHeight,
+                                document.body.offsetHeight,
+                                document.documentElement.clientHeight,
+                                document.documentElement.scrollHeight,
+                                document.documentElement.offsetHeight
+                            ) - window.innerHeight;
+                            
+                            // Evitam impartirea la 0
+                            if (docHeight <= 0) {
+                                ticking = false;
+                                return;
+                            }
+                            
+                            // Procentul de scroll (0 la 1)
+                            const scrollPercent = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+                            
+                            // translateY: 100% (complet ascunsa) -> 0% (complet vizibila)
+                            // Floarea incepe sa apara dupa 5% scroll si e completa la 100%
+                            const startAppear = 0.05;
+                            
+                            let translateY;
+                            if (scrollPercent < startAppear) {
+                                translateY = 100; // complet ascunsa
+                            } else {
+                                // De la startAppear la 1, translateY merge de la 100 la 0
+                                const adjustedPercent = (scrollPercent - startAppear) / (1 - startAppear);
+                                translateY = 100 - (adjustedPercent * 100);
+                            }
+                            
+                            sunflower.style.transform = `translateY(${translateY}%)`;
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }
+                
+                // Ascultam toate tipurile de scroll events
+                window.addEventListener('scroll', updateSunflower, { passive: true });
+                window.addEventListener('touchmove', updateSunflower, { passive: true });
+                window.addEventListener('resize', updateSunflower, { passive: true });
+                
+                // Pentru iOS Safari
+                document.addEventListener('touchstart', function() {}, { passive: true });
+                document.addEventListener('touchmove', updateSunflower, { passive: true });
+                
+                // Setam starea initiala
+                setTimeout(updateSunflower, 100);
+            })();
+        </script>
+
+</body>
+</html>
