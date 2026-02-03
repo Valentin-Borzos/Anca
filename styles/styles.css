@@ -94,6 +94,101 @@
         transform: rotate(3deg) scale(1.05);
     }
 }
+
+/* Pug Bubble PNG Floating - INDEPENDENT */
+#pugBubbleContainer {
+    position: fixed;
+    z-index: 998;
+    pointer-events: auto;
+    animation: pugBubbleMove 18s linear infinite;
+}
+.pug-bubble-img {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    animation: bubbleRotate 4s ease-in-out infinite;
+    transition: transform 0.2s ease;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+}
+.pug-bubble-img:hover {
+    transform: scale(1.15);
+}
+@keyframes pugBubbleMove {
+    0% {
+        left: 15vw;
+        top: 60vh;
+    }
+    20% {
+        left: 70vw;
+        top: 25vh;
+    }
+    40% {
+        left: 25vw;
+        top: 40vh;
+    }
+    60% {
+        left: 75vw;
+        top: 75vh;
+    }
+    80% {
+        left: 40vw;
+        top: 20vh;
+    }
+    100% {
+        left: 15vw;
+        top: 60vh;
+    }
+}
+
+/* Avocado Bubble PNG Floating - INDEPENDENT */
+#avocadoBubbleContainer {
+    position: fixed;
+    z-index: 997;
+    pointer-events: auto;
+    animation: avocadoBubbleMove 16s linear infinite;
+}
+.avocado-bubble-img {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    animation: bubbleRotate 4s ease-in-out infinite;
+    transition: transform 0.2s ease;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+}
+.avocado-bubble-img:hover {
+    transform: scale(1.15);
+}
+@keyframes avocadoBubbleMove {
+    0% {
+        left: 50vw;
+        top: 30vh;
+    }
+    20% {
+        left: 20vw;
+        top: 65vh;
+    }
+    40% {
+        left: 80vw;
+        top: 45vh;
+    }
+    60% {
+        left: 35vw;
+        top: 20vh;
+    }
+    80% {
+        left: 65vw;
+        top: 70vh;
+    }
+    100% {
+        left: 50vw;
+        top: 30vh;
+    }
+}
+
 @keyframes sunflowerFly {
     0% { 
         opacity: 1; 
@@ -169,6 +264,36 @@ body {
     color: var(--dark);
     line-height: 1.7;
     overflow-x: hidden;
+}
+
+/* ===== LAZY LOADING EFFECTS ===== */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+img[loading="lazy"].loaded,
+img[loading="lazy"]:not([src=""]) {
+    opacity: 1;
+}
+
+/* Fix pentru imagine întoarsă */
+img[src*="IMG_0665.JPG"] {
+    transform: rotate(180deg);
+}
+
+/* Placeholder styling pentru imagini care se încarcă */
+.polaroid img[loading="lazy"],
+.xray-frame img[loading="lazy"],
+.chapter-gallery img[loading="lazy"],
+.gallery-main img[loading="lazy"] {
+    background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-light) 100%);
+    min-height: 150px;
+}
+
+/* Video lazy loading */
+video[preload="none"] {
+    background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-light) 100%);
 }
 
 /* ===== PRELOADER ===== */

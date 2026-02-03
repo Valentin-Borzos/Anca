@@ -59,12 +59,128 @@
         };
     }, 20000); // 20 secunde după încărcarea paginii
 })();
+
+// ===== PUG PNG BUBBLE - APARE DUPĂ BEBE, NU REAPARE =====
+(function() {
+    // Așteaptă 34 secunde (20 + 14) după încărcare, apoi afișează pug-ul
+    setTimeout(function startPugBubble() {
+        const container = document.getElementById('pugBubbleContainer');
+        const img = document.getElementById('pugBubble');
+        
+        if (!container || !img) {
+            console.log('Pug bubble elements not found');
+            return;
+        }
+        
+        // Afișează pug-ul
+        container.style.display = 'block';
+        console.log('Pug bubble appeared!');
+        
+        // La click, dispare cu flori care zboară în toate direcțiile - NU REAPARE
+        img.onclick = function() {
+            // Creează 25 de emoticoane floarea-soarelui care zboară în toate direcțiile
+            for (let i = 0; i < 25; i++) {
+                const emoji = document.createElement('span');
+                emoji.textContent = '🌻';
+                // Direcție randomă în toate direcțiile
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 150 + Math.random() * 200;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                emoji.style.cssText = `
+                    position: absolute;
+                    font-size: ${20 + Math.random() * 15}px;
+                    left: 50px;
+                    top: 50px;
+                    pointer-events: none;
+                    z-index: 1000;
+                    --tx: ${tx}px;
+                    --ty: ${ty}px;
+                    animation: sunflowerFly ${0.8 + Math.random() * 0.6}s ease-out forwards;
+                    animation-delay: ${Math.random() * 0.15}s;
+                `;
+                container.appendChild(emoji);
+                setTimeout(() => emoji.remove(), 1800);
+            }
+            
+            // Ascunde imaginea
+            img.style.opacity = '0';
+            img.style.transform = 'scale(0.3)';
+            
+            // După animație, ascunde complet și NU mai reapare
+            setTimeout(() => {
+                container.style.display = 'none';
+                container.remove(); // Elimină complet din DOM
+                
+                // Declanșează apariția avocado după 10 secunde
+                setTimeout(startAvocadoBubble, 10000);
+            }, 500);
+        };
+    }, 34000); // 34 secunde (20 + 14) după încărcarea paginii
+})();
+
+// ===== AVOCADO PNG BUBBLE - APARE DUPĂ PUG E SPART, NU REAPARE =====
+function startAvocadoBubble() {
+    const container = document.getElementById('avocadoBubbleContainer');
+    const img = document.getElementById('avocadoBubble');
+    
+    if (!container || !img) {
+        console.log('Avocado bubble elements not found');
+        return;
+    }
+    
+    // Afișează avocado
+    container.style.display = 'block';
+    console.log('Avocado bubble appeared!');
+    
+    // La click, dispare cu flori care zboară în toate direcțiile - NU REAPARE
+    img.onclick = function() {
+        // Creează 25 de emoticoane floarea-soarelui care zboară în toate direcțiile
+        for (let i = 0; i < 25; i++) {
+            const emoji = document.createElement('span');
+            emoji.textContent = '🌻';
+            // Direcție randomă în toate direcțiile
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 150 + Math.random() * 200;
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            
+            emoji.style.cssText = `
+                position: absolute;
+                font-size: ${20 + Math.random() * 15}px;
+                left: 50px;
+                top: 50px;
+                pointer-events: none;
+                z-index: 1000;
+                --tx: ${tx}px;
+                --ty: ${ty}px;
+                animation: sunflowerFly ${0.8 + Math.random() * 0.6}s ease-out forwards;
+                animation-delay: ${Math.random() * 0.15}s;
+            `;
+            container.appendChild(emoji);
+            setTimeout(() => emoji.remove(), 1800);
+        }
+        
+        // Ascunde imaginea
+        img.style.opacity = '0';
+        img.style.transform = 'scale(0.3)';
+        
+        // După animație, ascunde complet și NU mai reapare
+        setTimeout(() => {
+            container.style.display = 'none';
+            container.remove(); // Elimină complet din DOM
+        }, 500);
+    };
+}
+
 /* ============================================
    💉 DR. ANCA - Script Interactiv
    Site Medical-Romantic Valentine's Day 2026
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initLazyLoading();
     initIntroPage();
     initPreloader();
     initFloatingHearts();
@@ -79,6 +195,51 @@ document.addEventListener('DOMContentLoaded', () => {
     initSurgeryGame();
     initAlbum();
 });
+
+/* ===== LAZY LOADING ENHANCEMENT ===== */
+function initLazyLoading() {
+    // Adaugă clasa 'loaded' când imaginile se încarcă
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    lazyImages.forEach(img => {
+        // Dacă imaginea e deja încărcată din cache
+        if (img.complete && img.naturalHeight !== 0) {
+            img.classList.add('loaded');
+        } else {
+            // Ascultă evenimentul de încărcare
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+            });
+            
+            // În caz de eroare, tot afișăm imaginea
+            img.addEventListener('error', function() {
+                this.classList.add('loaded');
+            });
+        }
+    });
+    
+    // Intersection Observer pentru lazy loading suplimentar (video)
+    if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const video = entry.target;
+                    // Setează preload la metadata când video-ul intră în viewport
+                    if (video.preload === 'none') {
+                        video.preload = 'metadata';
+                    }
+                    observer.unobserve(video);
+                }
+            });
+        }, {
+            rootMargin: '200px 0px' // Încarcă puțin înainte de a fi vizibil
+        });
+        
+        document.querySelectorAll('video[preload="none"]').forEach(video => {
+            videoObserver.observe(video);
+        });
+    }
+}
 
 /* ===== INTRO PAGE WITH ENVELOPE ===== */
 function initIntroPage() {

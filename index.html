@@ -127,7 +127,7 @@
                 <div class="hero-photo">
                     <div class="photo-frame stethoscope-frame floating-animation">
                         <div class="photo-glow"></div>
-                        <img src="Assets/Images/anca-1.jpg" alt="Anca" class="photo-inside">
+                        <img src="Assets/Images/anca-1.jpg" alt="Anca" class="photo-inside" loading="lazy">
                         <div class="stethoscope-decoration">🩺</div>
                         <div class="photo-hearts">
                             <span>🌻</span><span>☀️</span><span>🌻</span>
@@ -176,7 +176,17 @@
 
         <!-- Bula cu imagine PNG - TOTAL INDEPENDENTĂ (în afara secțiunii pentru position:fixed) -->
         <div id="bebeBubbleContainer" style="display:none;">
-            <img src="Assets/Images/bebe-2.png" id="bebeBubble" alt="Bebe Bubble" class="bebe-bubble-img">
+            <img src="Assets/Images/bebe-2.png" id="bebeBubble" alt="Bebe Bubble" class="bebe-bubble-img" loading="lazy">
+        </div>
+
+        <!-- Pug Bubble - apare după bebe bubble -->
+        <div id="pugBubbleContainer" style="display:none;">
+            <img src="Assets/Images/pug.png" id="pugBubble" alt="Pug Bubble" class="pug-bubble-img" loading="lazy">
+        </div>
+
+        <!-- Avocado Bubble - apare după ce pug e spart -->
+        <div id="avocadoBubbleContainer" style="display:none;">
+            <img src="Assets/Images/avocado.png" id="avocadoBubble" alt="Avocado Bubble" class="avocado-bubble-img" loading="lazy">
         </div>
 
         <!-- CAPITOLUL 1: Povestea Noastră - Timeline Epic -->
@@ -202,7 +212,7 @@
                             <h3>I kinda like you... <span style="font-size:1.1em;">🤭</span></h3>
                             <div class="chapter-gallery">
                                 <div class="gallery-main">
-                                    <img src="Assets/Images/mana-1.jpg" alt="Prima zi">
+                                    <img src="Assets/Images/mana-1.jpg" alt="Prima zi" loading="lazy">
                                     <div class="gallery-overlay">
                                         <span>Si ai lasat fericirea sa intre in viata mea... 💕</span>
                                     </div>
@@ -226,12 +236,12 @@
                         </div>
                         <div class="chapter-content glassmorphism">
                             <div class="chapter-badge">PRIMELE MOMENTE IMPREUNA</div>
-                            <h3>Ador lumea noastră</h3>
+                            <h3>Iubeam din nou viata</h3>
                             <div class="chapter-gallery multi-gallery">
-                                <img src="Assets/Images/capitol unu unu.jpg" alt="Capitol Unu 1">
-                                <img src="Assets/Images/capitol unu doi.jpeg" alt="Capitol Unu 2">
-                                <img src="Assets/Images/capitol unu trei.jpg" alt="Capitol Unu 3">
-                                <img src="Assets/Images/capitol unu patru.JPG" alt="Capitol Unu 4">
+                                <img src="Assets/Images/capitol unu unu.jpg" alt="Capitol Unu 1" loading="lazy">
+                                <img src="Assets/Images/capitol unu doi.jpeg" alt="Capitol Unu 2" loading="lazy">
+                                <img src="Assets/Images/capitol unu trei.jpg" alt="Capitol Unu 3" loading="lazy">
+                                <img src="Assets/Images/capitol unu patru.JPG" alt="Capitol Unu 4" loading="lazy">
                             </div>
                             <div class="chapter-text">
                                 <p>Mi-ai dat sansa sa te cunosc, si am inceput sa ador prezenta ta. Nu ma mai saturam de tine! Era din ce in ce mai bine.</p>
@@ -252,10 +262,10 @@
                             <div class="chapter-badge">Dorul ne intarea</div>
                             <h3>Cand distanta a aparut, iubirea a crescut</h3>
                             <div class="chapter-gallery multi-gallery">
-                                <img src="Assets/Images/capitol doi unu.jpeg" alt="Capitol Doi 1">
-                                <img src="Assets/Images/capitol doi doi.jpg" alt="Capitol Doi 2">
-                                <img src="Assets/Images/capitol doi trei.jpg" alt="Capitol Doi 3">
-                                <img src="Assets/Images/capitol doi patru.jpg" alt="Capitol Doi 4">
+                                <img src="Assets/Images/capitol doi unu.jpeg" alt="Capitol Doi 1" loading="lazy">
+                                <img src="Assets/Images/capitol doi doi.jpg" alt="Capitol Doi 2" loading="lazy">
+                                <img src="Assets/Images/capitol doi trei.jpg" alt="Capitol Doi 3" loading="lazy">
+                                <img src="Assets/Images/capitol doi patru.jpg" alt="Capitol Doi 4" loading="lazy">
                             </div>
                             <div class="chapter-text">
 
@@ -273,10 +283,10 @@
                             <div class="chapter-badge special">E realitate sau vis?</div>
                             <h3>Si revederile erau mai dulci ca niciodata</h3>
                             <div class="chapter-gallery multi-gallery">
-                                <img src="Assets/Images/capitol trei unu.JPG" alt="Capitol Trei 1">
-                                <img src="Assets/Images/capitol trei doi.jpeg" alt="Capitol Trei 2">
-                                <img src="Assets/Images/capitol trei trei.jpeg" alt="Capitol Trei 3">
-                                <img src="Assets/Images/capitol trei patru.jpeg" alt="Capitol Trei 4">
+                                <img src="Assets/Images/capitol trei unu.JPG" alt="Capitol Trei 1" loading="lazy">
+                                <img src="Assets/Images/capitol trei doi.jpeg" alt="Capitol Trei 2" loading="lazy">
+                                <img src="Assets/Images/capitol trei trei.jpeg" alt="Capitol Trei 3" loading="lazy">
+                                <img src="Assets/Images/capitol trei patru.jpeg" alt="Capitol Trei 4" loading="lazy">
                             </div>
                             <div class="chapter-text">
                                 <p>Si fiecare dimineata in care te aveam din nou langa mine, era o binecuvantare.</p>
@@ -292,14 +302,14 @@
                             <div class="chapter-badge valentines">Doi gogoși suna mai bine oricum</div>
                             <h3>Esti un puki enervant (de adorabil)</h3>
                             <div class="chapter-gallery multi-gallery">
-                                  <img src="Assets/Images/capitol patru unu.jpg" alt="Capitol Patru 1">
-                                  <img src="Assets/Images/capitol patru doi.JPG" alt="Capitol Patru 2">
-                                  <img src="Assets/Images/capitol patru trei.jpg" alt="Capitol Patru 3">
-                                  <img src="Assets/Images/capitol patru patru.JPG" alt="Capitol Patru 4">
+                                  <img src="Assets/Images/capitol patru unu.jpg" alt="Capitol Patru 1" loading="lazy">
+                                  <img src="Assets/Images/capitol patru doi.JPG" alt="Capitol Patru 2" loading="lazy">
+                                  <img src="Assets/Images/capitol patru trei.jpg" alt="Capitol Patru 3" loading="lazy">
+                                  <img src="Assets/Images/capitol patru patru.JPG" alt="Capitol Patru 4" loading="lazy">
                             </div>
                             <div class="chapter-text final-declaration">
                                 <p>Ador cand radem (mai mult tu de mine), iubesc cand suntem copii, cand ne ghiontanim, ne tachinam sau radem unul de altul.<br>Nu te schimba niciodata si nu te opri din a ma enerva, nu ai mai fi tu daca n-ai face asta.</p>
-                                <p class="declaration">Tu ești inima mea, sufletul meu, totul pentru mine. 💕</p>
+                                <p class="declaration">Esti inima si sufletul meu. 💕</p>
                             </div>
                             <div class="love-meter">
                                 <span class="meter-label">Nivel Zurlie:</span>
@@ -326,7 +336,7 @@
                             </div>
                             <div class="chapter-text final-declaration">
                                 <p>Si ai crescut atat de mult in inima mea incat nu mai pot concepe sa nu faci parte din viata si gandurile mele...</p>
-                                <p class="declaration">Tu ești inima mea, sufletul meu, totul pentru mine. 💕</p>
+                                <p class="declaration">Esti totul! 💕</p>
                             </div>
                             <div class="love-meter">
                                 <span class="meter-label">Nivel Iubire:</span>
@@ -367,7 +377,7 @@
                             <span class="cover-date">2024 - ∞</span>
                         </div>
                         <div class="cover-photo">
-                            <img src="Assets/Images/anca-1.jpg" alt="Noi">
+                            <img src="Assets/Images/anca-1.jpg" alt="Noi" loading="lazy">
                         </div>
                         <p class="cover-instruction">📖 Click pentru a deschide albumul</p>
                     </div>
@@ -389,15 +399,15 @@
                             </div>
                             <div class="page-photos">
                                 <div class="polaroid">
-                                    <img src="Assets/Images/IMG_0479.jpeg" alt="Moment 1">
+                                    <img src="Assets/Images/IMG_0479.jpeg" alt="Moment 1" loading="lazy">
                                     <p class="polaroid-caption">Explorari 🌍</p>
                                 </div>
                                 <div class="polaroid tilted-left">
-                                    <img src="Assets/Images/IMG_0507.jpeg" alt="Moment 2">
+                                    <img src="Assets/Images/IMG_0507.jpeg" alt="Moment 2" loading="lazy">
                                     <p class="polaroid-caption">Pupici 💑</p>
                                 </div>
                                 <div class="polaroid tilted-right">
-                                    <img src="Assets/Images/IMG_0517.jpeg" alt="Moment 3">
+                                    <img src="Assets/Images/IMG_0517.jpeg" alt="Moment 3" loading="lazy">
                                     <p class="polaroid-caption">Zâmbete 😊</p>
                                 </div>
                             </div>
@@ -411,15 +421,15 @@
                             </div>
                             <div class="page-photos">
                                 <div class="polaroid">
-                                    <img src="Assets/Images/IMG_0576.JPG" alt="Aventură 1">
+                                    <img src="Assets/Images/IMG_0576.JPG" alt="Aventură 1" loading="lazy">
                                     <p class="polaroid-caption">Liniste</p>
                                 </div>
                                 <div class="polaroid tilted-left">
-                                    <img src="Assets/Images/IMG_0586.JPG" alt="Aventură 2">
+                                    <img src="Assets/Images/IMG_0586.JPG" alt="Aventură 2" loading="lazy">
                                     <p class="polaroid-caption">"Uita-te in sus sa iasa poza cool"</p>
                                 </div>
                                 <div class="polaroid tilted-right">
-                                    <img src="Assets/Images/IMG_0665.JPG" alt="Aventură 3">
+                                    <img src="Assets/Images/IMG_0665.JPG" alt="Aventură 3" loading="lazy">
                                     <p class="polaroid-caption">Noi doi 💕</p>
                                 </div>
                             </div>
@@ -433,15 +443,15 @@
                             </div>
                             <div class="page-photos">
                                 <div class="polaroid">
-                                    <img src="Assets/Images/IMG_0697.jpeg" alt="Moment 1">
+                                    <img src="Assets/Images/IMG_0697.jpeg" alt="Moment 1" loading="lazy">
                                     <p class="polaroid-caption">"Uite un nor!!!"</p>
                                 </div>
                                 <div class="polaroid tilted-left">
-                                    <img src="Assets/Images/IMG_2173.JPG" alt="Moment 2">
+                                    <img src="Assets/Images/IMG_2173.JPG" alt="Moment 2" loading="lazy">
                                     <p class="polaroid-caption">Dublin Bus</p>
                                 </div>
                                 <div class="polaroid tilted-right">
-                                    <img src="Assets/Images/IMG_2178.JPG" alt="Moment 3">
+                                    <img src="Assets/Images/IMG_2178.JPG" alt="Moment 3" loading="lazy">
                                     <p class="polaroid-caption">Centra Roll</p>
                                 </div>
                             </div>
@@ -455,15 +465,15 @@
                             </div>
                             <div class="page-photos">
                                 <div class="polaroid">
-                                    <img src="Assets/Images/IMG_2195.JPG" alt="Zâmbet 1">
+                                    <img src="Assets/Images/IMG_2195.JPG" alt="Zâmbet 1" loading="lazy">
                                     <p class="polaroid-caption">Cocktail-isti</p>
                                 </div>
                                 <div class="polaroid tilted-left">
-                                    <img src="Assets/Images/IMG_2207.JPG" alt="Zâmbet 2">
+                                    <img src="Assets/Images/IMG_2207.JPG" alt="Zâmbet 2" loading="lazy">
                                     <p class="polaroid-caption">Mine</p>
                                 </div>
                                 <div class="polaroid tilted-right">
-                                    <img src="Assets/Images/IMG_2213.JPG" alt="Zâmbet 3">
+                                    <img src="Assets/Images/IMG_2213.JPG" alt="Zâmbet 3" loading="lazy">
                                     <p class="polaroid-caption">Biliardisti</p>
                                 </div>
                             </div>
@@ -477,15 +487,15 @@
                             </div>
                             <div class="page-photos">
                                 <div class="polaroid">
-                                    <img src="Assets/Images/IMG_2252.JPG" alt="Călătorie 1">
+                                    <img src="Assets/Images/IMG_2252.JPG" alt="Călătorie 1" loading="lazy">
                                     <p class="polaroid-caption">Jmekeri</p>
                                 </div>
                                 <div class="polaroid tilted-left">
-                                    <img src="Assets/Images/IMG_2260.JPG" alt="Călătorie 2">
+                                    <img src="Assets/Images/IMG_2260.JPG" alt="Călătorie 2" loading="lazy">
                                     <p class="polaroid-caption">Read my happy eyes but don't be jealous</p>
                                 </div>
                                 <div class="polaroid tilted-right">
-                                    <img src="Assets/Images/IMG_2512.JPG" alt="Călătorie 3">
+                                    <img src="Assets/Images/IMG_2512.JPG" alt="Călătorie 3" loading="lazy">
                                     <p class="polaroid-caption">Așa zisa plaja</p>
                                 </div>
                             </div>
@@ -499,15 +509,15 @@
                             </div>
                             <div class="page-photos">
                                 <div class="polaroid">
-                                    <img src="Assets/Images/IMG_2531.JPG" alt="Iarnă 1">
+                                    <img src="Assets/Images/IMG_2531.JPG" alt="Iarnă 1" loading="lazy">
                                     <p class="polaroid-caption">Rasete</p>
                                 </div>
                                 <div class="polaroid tilted-left">
-                                    <img src="Assets/Images/IMG_2582.JPG" alt="Iarnă 2">
+                                    <img src="Assets/Images/IMG_2582.JPG" alt="Iarnă 2" loading="lazy">
                                     <p class="polaroid-caption">Implinire</p>
                                 </div>
                                 <div class="polaroid tilted-right">
-                                    <img src="Assets/Images/IMG_3159.JPG" alt="Iarnă 3">
+                                    <img src="Assets/Images/IMG_3159.JPG" alt="Iarnă 3" loading="lazy">
                                     <p class="polaroid-caption">Nuntiști</p>
                                 </div>
                             </div>
@@ -521,15 +531,15 @@
                             </div>
                             <div class="page-photos">
                                 <div class="polaroid">
-                                    <img src="Assets/Images/IMG_3568.JPG" alt="Primăvară 1">
+                                    <img src="Assets/Images/IMG_3568.JPG" alt="Primăvară 1" loading="lazy">
                                     <p class="polaroid-caption">We</p>
                                 </div>
                                 <div class="polaroid tilted-left">
-                                    <img src="Assets/Images/IMG_3583.JPG" alt="Primăvară 2">
+                                    <img src="Assets/Images/IMG_3583.JPG" alt="Primăvară 2" loading="lazy">
                                     <p class="polaroid-caption">Bloom</p>
                                 </div>
                                 <div class="polaroid tilted-right">
-                                    <img src="Assets/Images/IMG_3601.JPG" alt="Primăvară 3">
+                                    <img src="Assets/Images/IMG_3601.JPG" alt="Primăvară 3" loading="lazy">
                                     <p class="polaroid-caption">Everyday 🌻</p>
                                 </div>
                             </div>
@@ -543,15 +553,15 @@
                             </div>
                             <div class="page-photos">
                                 <div class="polaroid">
-                                    <img src="Assets/Images/IMG_3652.JPG" alt="Vară 1">
+                                    <img src="Assets/Images/IMG_3652.JPG" alt="Vară 1" loading="lazy">
                                     <p class="polaroid-caption">Căldură 🌞</p>
                                 </div>
                                 <div class="polaroid tilted-left">
-                                    <img src="Assets/Images/IMG_4214.JPG" alt="Vară 2">
+                                    <img src="Assets/Images/IMG_4214.JPG" alt="Vară 2" loading="lazy">
                                     <p class="polaroid-caption">Zurlea 1&2</p>
                                 </div>
                                 <div class="polaroid tilted-right">
-                                    <img src="Assets/Images/IMG_5081.JPG" alt="Vară 3">
+                                    <img src="Assets/Images/IMG_5081.JPG" alt="Vară 3" loading="lazy">
                                     <p class="polaroid-caption">Vacanță 🌴</p>
                                 </div>
                             </div>
@@ -565,15 +575,15 @@
                             </div>
                             <div class="page-photos">
                                 <div class="polaroid">
-                                    <img src="Assets/Images/IMG_9362.JPG" alt="Recent 1">
+                                    <img src="Assets/Images/IMG_9362.JPG" alt="Recent 1" loading="lazy">
                                     <p class="polaroid-caption">Si maine 📅</p>
                                 </div>
                                 <div class="polaroid tilted-left">
-                                    <img src="Assets/Images/IMG_9439.JPG" alt="Recent 2">
+                                    <img src="Assets/Images/IMG_9439.JPG" alt="Recent 2" loading="lazy">
                                     <p class="polaroid-caption">Si poimaine 💕</p>
                                 </div>
                                 <div class="polaroid tilted-right">
-                                    <img src="Assets/Images/IMG_9460.JPG" alt="Recent 3">
+                                    <img src="Assets/Images/IMG_9460.JPG" alt="Recent 3" loading="lazy">
                                     <p class="polaroid-caption">Si pentru totdeauna 💝</p>
                                 </div>
                             </div>
@@ -587,12 +597,12 @@
                             </div>
                             <div class="page-photos centered">
                                 <div class="polaroid big">
-                                    <img src="Assets/Images/IMG_9598.jpeg" alt="Noi">
+                                    <img src="Assets/Images/IMG_9598.jpeg" alt="Noi" loading="lazy">
                                     <p class="polaroid-caption">Noi, pentru totdeauna ❤️</p>
                                 </div>
                             </div>
                             <div class="page-message">
-                                <p class="final-album-text">Fiecare pagină din acest album reprezintă o bucățică din inima mea.</p>
+                                <p class="final-album-text">Fiecare moment cu tine reprezintă o bucățică din fericire mea.</p>
                                 
                             </div>
                             <div class="page-signature">
@@ -760,7 +770,7 @@
                         <div class="prescription-footer">
                             <div class="doctor-signature">
                                 <p>Medic prescriptor:</p>
-                                <p class="signature animated-signature">Dr. Îndrăgostit</p>
+                                <p class="signature animated-signature">Dft. Puki</p>
                                 <p class="specialty">Specialist în Te Iubesc</p>
                             </div>
                             <div class="prescription-seal">
@@ -775,7 +785,7 @@
                 </div>
                 
                 <div class="refill-notice glassmorphism">
-                    <p>📋 Rețeta se poate reînnoi cu un simplu "Te iubesc, Anca!" 💕</p>
+                    <p>📋 Rețeta se poate reînnoi cu un simplu "Te iubesc, Pukisor!" 💕</p>
                 </div>
             </div>
         </section>
@@ -955,7 +965,7 @@
                             <span class="joke-emoji">💊</span>
                         </div>
                         <p class="joke-text">Ma simt mai valoros 💎 si mai puternic 💪 cu ea langa mine...</p>
-                        <div class="joke-reaction">📚❤️</div>
+                        <div class="joke-reaction">❤️</div>
                     </div>
 
                     <div class="joke-card glassmorphism hover-tilt">
@@ -963,8 +973,8 @@
                             <span class="joke-number">09</span>
                             <span class="joke-emoji">🧪</span>
                         </div>
-                        <p class="joke-text">Ai reușit sa faci din mine un indragostit cronic... mno bravo Puki...</p>
-                        <div class="joke-reaction">⚗️💝</div>
+                        <p class="joke-text">Cand sunt in bratele ei, timpul inceteaza sa mai existe, orele nu mai sunt simtite, si toate gandurile, si peisajele gri din viata mea sunt inlaturate de paradisul cu care-mi umple inima...</p>
+                        <div class="joke-reaction">💝</div>
                     </div>
                 </div>
 
@@ -1040,7 +1050,7 @@
                 <div class="cinema-screen glassmorphism">
                     <div class="cinema-frame">
                         <div class="video-container">
-                            <video controls playsinline class="main-video" poster="Assets/Images/IMG_7237363.jpg">
+                            <video controls playsinline muted class="main-video" poster="Assets/Images/IMG_7237363.jpg" preload="none" loading="lazy">
                                 <source src="Assets/Videos/IMG_2560.mov" type="video/mp4">
                             </video>
                         </div>
@@ -1049,7 +1059,7 @@
 
                     <div class="cinema-frame">
                         <div class="video-container">
-                            <video controls playsinline class="main-video" poster="Assets/Images/IMG_4649.jpg">
+                            <video controls playsinline muted class="main-video" poster="Assets/Images/IMG_4649.jpg" preload="none" loading="lazy">
                                 <source src="Assets/Videos/IMG_3711.mov" type="video/mp4">
                             </video>
                         </div>
@@ -1308,7 +1318,7 @@
                         <span class="surgery-icon">🏥</span>
                         Sala de Operație a Iubirii
                     </h2>
-                    <p class="chapter-subtitle">Mini-joc interactiv: Vindecă inima!</p>
+                    
                 </div>
                 
                 <div class="surgery-room glassmorphism">
@@ -1382,16 +1392,15 @@
                                 <span class="big-heart beating">❤️</span>
                             </div>
                             <h3 class="final-declaration">Kicsikém, te iubesc!</h3>
-                            <p class="final-text">Tu ești cel mai bun medicament pentru sufletul meu.</p>
-                            <p class="final-text">Ești tot ce mi-am dorit și mai mult.</p>
-                            <p class="final-text valentines-wish">La mulți ani de Valentine's Day! 💕</p>
+                            
+                            <p class="final-text valentines-wish">Voi căuta toată viața cuvinte care să descrie frumusețea ce te definește și fericirea pe care mi-o dăruiești… și voi eșua, pentru că niciun cuvânt nu are puterea să exprime asta. 💕</p>
                             
                         </div>
                     </div>
                     
                     <button class="magic-button neon-btn" id="magicBtn">
                         <span class="btn-icon">💉</span>
-                        <span class="btn-text">Administrează doza FINALĂ de IUBIRE!</span>
+                        <span class="btn-text">Apasa pentru si mai multa iubire!</span>
                         <span class="btn-sparkle">✨</span>
                     </button>
                 </div>
@@ -1409,7 +1418,7 @@
                     <polyline points="0,25 50,25 60,25 70,10 80,40 90,25 100,25 150,25 160,25 170,10 180,40 190,25 200,25 250,25 260,25 270,10 280,40 290,25 300,25 350,25 360,25 370,10 380,40 390,25 400,25"/>
                 </svg>
             </div>
-            <p class="footer-text">Călătoria mea: inima ta, bilet doar dus ✈️</p>
+            <p class="footer-text">Călătoria mea preferata: inima ta cu bilet doar dus ✈️</p>
            
             
             
@@ -1432,7 +1441,7 @@
 
     <!-- Floarea Soarelui care creste pe scroll -->
     <div id="growingSunflower">
-        <img src="Assets/Images/floarea-soarelui.png" alt="Floarea Soarelui" id="sunflowerImg">
+        <img src="Assets/Images/floarea-soarelui.png" alt="Floarea Soarelui" id="sunflowerImg" loading="lazy">
     </div>
 
         <script src="js/script.js"></script>
